@@ -15,7 +15,7 @@ int main (int argc, char* argv[])
     return 0;
 }
 
-void mpi_init(int argc, char* argv[], int mpi_thread_type, int &provided, int &rank, int &size)
+void mpi_init(int argc, char argv[], int mpi_thread_type, int &provided, int &rank, int &size)
 {
     MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, &provided);
     MPI_Comm_rank (MPI_COMM_WORLD, &rank);
