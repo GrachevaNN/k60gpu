@@ -8,6 +8,18 @@ using namespace std;
 int main (int argc, char* argv[])
 {
     int rank, size, provided;
+    mpi_init(argc, argv, MPI_THREAD_FUNNELED, provided, rank, size);
+
+    MPI_Finalize();
+    return 0;
+}
+
+void mpi_init(int argc, char* argv[], int mpi_thread_type, int &provided, int &rank, int &size)
+{
+    MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, &provided);
+    MPI_Comm_rank (MPI_COMM_WORLD, &rank);
+    MPI_Comm_size (MPI_COMM_WORLD, &size);
+    
     char hostname[50];
     gethostname(hostname, 50);
     pid_t pid = getpid();
@@ -24,7 +36,7 @@ int main (int argc, char* argv[])
             printf("argv[%d]: %s\n", i, argv[i]);
         }
 
-        printf("mpi_thread_type: %d\n", MPI_THREAD_FUNNELED);
+        printf("mpi_thread_type: %d\n", mpi_thread_type);
 
         printf("provided: %d\n",   provided);
         printf("&provided: %p\n", &provided);
@@ -42,7 +54,4 @@ int main (int argc, char* argv[])
             printf("The threading support level: MPI_THREAD_FUNNELED\n");
         }
     }
-
-    MPI_Finalize();
-    return 0;
 }
