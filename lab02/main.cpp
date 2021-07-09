@@ -4,7 +4,8 @@
 #include <thread>
 
 using namespace std;
-void mpi_init(int argc, char* argv[], int mpi_thread_type, int &provided, int &rank, int &size);
+//void mpi_init(int argc, char* argv[], int mpi_thread_type, int &provided, int &rank, int &size);
+void mpi_init(int, char*, int, int&, int&, int&);
 
 int main (int argc, char* argv[])
 {
