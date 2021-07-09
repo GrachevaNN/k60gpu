@@ -4,6 +4,7 @@
 #include <thread>
 
 using namespace std;
+void mpi_init(int, char*, int, int, int, int);
 
 int main (int argc, char* argv[])
 {
