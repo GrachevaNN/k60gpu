@@ -24,7 +24,7 @@ int main (int argc, char* argv[])
             printf("argv[%d]: %s\n", i, argv[i]);
         }
 
-        printf("mpi_thread_type: %d\n", mpi_thread_type);
+        printf("mpi_thread_type: %d\n", MPI_THREAD_FUNNELED);
 
         printf("provided: %d\n",   provided);
         printf("&provided: %p\n", &provided);
