@@ -16,7 +16,8 @@ int main (int argc, char* argv[])
     gethostname(hostname, 50);
     pid_t pid = getpid();
     int nHardwareThreads = std::thread::hardware_concurrency();
-    fprintf(stderr, "Hostname: %s. MPI rank: %d. Process ID: %d. Hardware threads: %d \n", hostname, rank, pid, nHardwareThreads);
+    fprintf(stderr, "Hostname: %s. MPI rank: %d. Process ID: %d. Hardware threads: %d \n",
+            hostname, rank, pid, nHardwareThreads);
 
     if(rank==0) {
         printf("argc: %d\n", argc);
