@@ -9,9 +9,8 @@ echo '-------- mpicxx -o myapp main.o -----'
 mpicxx -o myapp2 main.o utils.o cpuThreads.o
 echo '-------------'
 
-echo '------- Starting myapp in 1 node with 4 cpu per node with maxtime by default (5 minutes) ------'
-echo '------- mpirun -np 4 ./myapp2 --------'
-mpirun -np 4 ./myapp2
+echo '------- mpirun -np 1 -ppn 1 -maxtime 2 ./myapp --------'
+mpirun -np 1 -ppn 1 -maxtime 2 ./myapp2
 
 echo '------- Task list: mps ---------'
 mps
