@@ -26,8 +26,6 @@ int main (int argc, char* argv[])
 
     multiGpuTest();
 
-    multiGpuTest2();
-
     MPI_Finalize();
     return 0;
 }
